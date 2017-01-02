@@ -1,0 +1,22 @@
+<%= simple_form_for @video do |f| %>
+  <% if @video.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= "#{pluralize(@video.errors.count, "error")} prohibited this post from being saved:" %>
+      </h2>
+      <ul>
+        <% @video.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.input :title %>
+  <%= f.input :preview %>
+  <%= f.input :starring %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.submit 'Save' %>
+<% end %>
