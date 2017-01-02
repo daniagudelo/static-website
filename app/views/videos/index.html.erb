@@ -3,9 +3,10 @@
     <% @videos.each do |video| %>
     <div class="col-xs-12">
       <div class="text-center">
-        <h2><%= post.title %></h2>
-        <%= raw(video.description).truncate(145) %>
-        <h6><%= video.created_at.strftime('%b %d, %Y') %></h6>
+        <h2><%= video.title %></h2>
+        <h4 align="center"><%= image_tag(video.preview) %></h4>
+        <%= raw(video.description).truncate(288) %>
+        <h6>Posted: <%= video.created_at.strftime('%b %d, %Y') %></h6>
       </div>
     <div class="text-center">
         <%= link_to "View Video", video_path(video) %>
